@@ -125,7 +125,7 @@
                     * Les concepts de Git
                     * Les fonctions de bases
                     * Travailler concrètement avec Git
-                    * Pour aller plus loin
+                    * Les workflows
                 </section>
             </section>
 
@@ -390,6 +390,7 @@ node_modules/
                 </section>
 
             </section>
+            <!-- Revert reset -->
             <section style="font-size: 22px; color:white" data-transition="slide" data-background="#4d7e65"
                 data-background-transition="zoom">
                 <section>
@@ -444,6 +445,7 @@ node_modules/
                     </script>
                 </section>
             </section>
+            <!-- Branching -->
             <section style="font-size: 22px; color:white" data-transition="slide" data-background="#C67B9E"
                 data-background-transition="zoom">
                 <section>
@@ -684,6 +686,24 @@ node_modules/
                         <li>avant de m'appeler (parce que c'est la première chose que je vais faire en arrivant)</li>
                     </p>
                 </section>
+                <section>
+                    <h1>0 conflit != 0 effet de bord</h1>
+                    <p class="semantic-sample">Ce n'est pas parce que les lignes de code se sont bien mergés que le
+                        travail
+                        d'un développeur n'a pas cassé le travail d'un autre.</p>
+                    <p class="semantic-sample">Les tests fonctionnels sont à toujours à faire.</p>
+                </section>
+                <section>
+                    <h1>Règles d'or</h1>
+                    <p class="semantic-sample">Je commit souvent</p>
+                    <p class="semantic-sample">Chaque commit n'est lié qu'à un seul sujet</p>
+                    <p class="semantic-sample">Je push tous les jours</p>
+                    <p class="semantic-sample">Je mets à jour mon repo local tous les jours</p>
+                    <p class="semantic-sample">Je mets mes expérimentations dans des branches à part et je les push</p>
+                    <p class="semantic-sample">Si j'ai un doute, je fais une branche ou un tag puis j'essaye</p>
+                    <p class="semantic-sample">Rien n'est jamais vraiment perdu (ou presque)</p>
+                    <p class="semantic-sample">Il y a la solution à mon problème sur Stackoverflow</p>
+                </section>
             </section>
             <!-- Exercices -->
             <section style="font-size: 22px; color:white" data-transition="slide" data-background-transition="zoom">
@@ -700,6 +720,8 @@ node_modules/
                 <section>
                     <h1>Workflows</h1>
                     <p class="semantic-sample">Pour une <i>organisation du travail</i> efficace et qualitative!</p>
+                    <p class="semantic-sample">Git est un outil génial à bien utiliser : les workflows sont les <b>processus
+                            de gestion de code</b> qui permettent une d'en tirer le maximum</p>
                     <ol>
                         <li class="semantic-sample">Workflow centralisé <i>tout sur master</i></li>
                         <li class="semantic-sample">Feature Branch workflow <i>une branche par fonctionnalité</i></li>
@@ -795,8 +817,8 @@ node_modules/
                 <section>
                     <h1>Feature Branching Workflow</h1>
                     <p class="semantic-sample"><i>Flow multi-branches</i>. Une branche principale servant à
-                        l'integration des fonctionnalités (souvent appelée <i>develop</i>). Puis <i>une branche par
-                            fonctionnalité</i> basée sur <i>develop</i>.</p>
+                        l'integration des fonctionnalités (souvent appelée <i>master</i>). Puis <i>une branche par
+                            fonctionnalité</i> basée sur <i>master</i>.</p>
                     <p class="semantic-sample">L'idée de ce flow est de séparer les concepts métiers en <i>story</i>
                         utilisateurs. Il permet une plus grande modularité et une meilleure maîtrise dans la façon
                         de
@@ -849,7 +871,7 @@ node_modules/
                             bugfix</code>. Cela concatène tous les commits de la branche <i>Mantis_845</i> en un seul.</p>
                     <p class="semantic-sample">Les merges des fonctionnalités dans la branche de développement peuvent
                         être fait <b>localement</b> (sur le poste de travail du lead tech par exemple). Ils peuvent
-                        être fait dans les <b>forges logicielles</b> (recommandé).</p>
+                        être fait dans les <b>forges logicielles</b> (par pull request).</p>
                     <p class="semantic-sample">En plus de la relecture, un build automatique peut (devrait) être mis en
                         place. Si ce n'est pas automatisé, c'est à la charge du mergeur de tester le build et le
                         démarrage de l'application</p>
@@ -896,14 +918,15 @@ node_modules/
             <section style="font-size: 22px; color:white" data-transition="slide" data-background="#a3c4bc"
                 data-background-transition="zoom">
                 <section>
-                    <h1></h1>
+                    <h1>Gitflow</h1>
                     <p class="semantic-sample">Cadrage théorique strict du <i></i>Feature Branch Workflow</i>.
                         Il est proposé en janvier 2010 par
                         <a href="https://nvie.com/posts/a-successful-git-branching-model/">Vincent Driessen</a> et a
                         connu une large adoption.
                     </p>
                     <p class="semantic-sample">Gitflow est conçu pour les <b>gros projets</b> qui font des livraisons
-                        régulièrement. C'est le cadre ultime pour gérer des paquebots.</p>
+                        régulièrement. C'est le cadre ultime pour gérer des bases de code paquebots avec de multiples
+                        équipes de développeurs en interne.</p>
                     <p class="semantic-sample"><code class="bash">git-flow</code> est la boîte à outil pour implémenter
                         les règles théoriques.</p>
                 </section>
@@ -916,7 +939,7 @@ node_modules/
                 <section>
                     <h1>Règle 1 : master & develop</h1>
                     <p>
-                        <img src="images/git_flow_master_dev.svg" style="width: 300px;padding:15px; background: white;"
+                        <img src="images/git_flow_master_dev.svg" style="width: 500px;padding:15px; background: white;"
                             alt="">
                     </p>
                     <p class="semantic-sample">Master ne contient que des releases.</p>
@@ -925,7 +948,7 @@ node_modules/
                 <section>
                     <h1>Règle 2 : feature branching</h1>
                     <p>
-                        <img src="images/git_flow_features.svg" style="width: 300px;padding:15px; background: white;"
+                        <img src="images/git_flow_features.svg" style="width: 500px;padding:15px; background: white;"
                             alt="">
                     </p>
                     <p class="semantic-sample">Le développement se fait essentiellement sur des branches dédiées.</p>
@@ -934,7 +957,7 @@ node_modules/
                 <section>
                     <h1>Règle 3 : branche de livraison</h1>
                     <p>
-                        <img src="images/git_flow_release.svg" style="width: 300px;padding:15px; background: white;"
+                        <img src="images/git_flow_release.svg" style="width: 500px;padding:15px; background: white;"
                             alt="">
                     </p>
                     <p class="semantic-sample">Une semaine avant la livraison, une branche <i>dédiée</i> est crée : on
@@ -947,7 +970,7 @@ node_modules/
                 <section>
                     <h1>Règle 4 : branche de patch - le hotfix</h1>
                     <p>
-                        <img src="images/git_flow.svg" style="width: 300px;padding:15px; background: white;" alt="">
+                        <img src="images/git_flow.svg" style="width: 500px;padding:15px; background: white;" alt="">
                     </p>
                     <p class="semantic-sample">Basée sur <b>master</b>. Seules branches qui "sortent" de master</p>
                     <p class="semantic-sample">Une fois le bug corrigé, la branche de
@@ -960,7 +983,7 @@ node_modules/
                     <ol>
                         <li class="semantic-sample"><b>Tous les avantages</b> du Feature Branch Workflow</li>
                         <li class="semantic-sample">Fluidité pour la livraison régulière</li>
-                        <li class="semantic-sample">Naturellement adapté à l'agile</li>
+                        <li class="semantic-sample">Naturellement <b>adapté à l'agile</b></li>
                         <li class="semantic-sample">Supporte des <i>gros</i> projets et <i>beaucoup</i> de développeurs
                             en compartimentant les responsabilités</li>
                         <li class="semantic-sample">Historiques du code et du projet très <i>liés et cadrés</i></li>
@@ -971,8 +994,8 @@ node_modules/
                     <ol>
                         <li class="semantic-sample"><i>Compliqué</i> à respecter : nécessite un responsable</li>
                         <li class="semantic-sample">Demande de la <i>rigueur</i></li>
-                        <li class="semantic-sample">À mon avis, exige d'avoir une <li>forge logicielle</li> (TFS,
-                        GitLab, GitHub, Bitbucket...) opérationnelle</li>
+                        <li class="semantic-sample">À mon avis, exige d'avoir une <i>forge logicielle</i> (TFS,
+                            GitLab, GitHub, Bitbucket...) opérationnelle</li>
                     </ol>
                 </section>
                 <section>
@@ -995,12 +1018,15 @@ node_modules/
                     <h1>Forking Workflow</h1>
                     <p class="semantic-sample">Complètement différent de ce qu'on a vu jusqu'à présent</p>
                     <p class="semantic-sample">Projets open-source et collaboratifs.</p>
-                    <p>
-                        <img src="images/git_forking_workflow.png" style="width: 500px;padding:15px; background: white;"
-                            alt="">
-                    </p>
+
                     <p class="semantic-sample">Chaque développeur a son repo local et un repo public.</p>
                     <p class="semantic-sample">La <b>Pull Request</b> est l'outil clef.</p>
+                </section>
+                <section>
+                    <p>
+                        <img src="images/git_forking_workflow.png" style="width: 650px;padding:15px; background: white;"
+                            alt="">
+                    </p>
                 </section>
                 <section>
                     <h1>Avantages</h1>
@@ -1029,14 +1055,6 @@ node_modules/
                     <li class="semantic-sample">Grosse équipe sur plusieurs sites, fuseaux horaires, entreprises, etc.</li>
                     <li class="semantic-sample">Projet à multiples parties prenantes</li>
                 </section>
-            </section>
-
-            <section>
-                <h1>0 conflit != 0 effet de bord</h1>
-                <p class="semantic-sample">Ce n'est pas parce que les lignes de code se sont bien mergés que le
-                    travail
-                    d'un développeur n'a pas cassé le travail d'un autre.</p>
-                <p class="semantic-sample">Les tests fonctionnels sont à toujours à faire.</p>
             </section>
 
         </div>
