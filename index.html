@@ -851,10 +851,11 @@ node_modules/
                 <section>
                     <h1>Les étapes du feature-branching</h1>
                     <ol>
-                        <li class="semantic-sample">Je crée une <i>branche</i> à partir de devs liés à une <i>issue/WI</i></li>
-                        <li class="semantic-sample">Je code sur ma branche (<i>commit et push régulier</i>)</li>
-                        <li class="semantic-sample">Je résous les conflits avec <i>dev</i> (<i>merge</i> ou <i>rebase</i>)</li>
-                        <li class="semantic-sample">Je crée la <i>pull request</i></li>
+                        <li class="semantic-sample">Je crée une branche <i>Mantis_845</i> à partir de <i>master</i>
+                            liés à une issue/WI</li>
+                        <li class="semantic-sample">Je code sur ma branche (<b>commit</b> et <b>push</b> réguliers)</li>
+                        <li class="semantic-sample">Je résous les conflits avec <i>master</i> (<b>merge</b> ou <b>rebase</b>)</li>
+                        <li class="semantic-sample">Je crée la <b>pull request</b></li>
                         <li class="semantic-sample">Un <i>relecteur valide</i> ma pull request ou me renvoie à
                             l'étape 2</li>
                     </ol>
@@ -862,8 +863,8 @@ node_modules/
                 <section>
                     <h1>Remarques</h1>
                     <p class="semantic-sample">On peut continuer à développer sur la feature branch <i>Mantis_845</i>
-                        même après un merge sur la branche <b>dev</b>. Le prochain merge de <i>Mantis_845</i> ne fera
-                        que rajouter les nouveaux commits dans <b>dev</b> </p>
+                        même après un merge sur la branche <i>master</i>. Le prochain merge de <i>Mantis_845</i> ne
+                        fera que rajouter les nouveaux commits dans <i>master</i> </p>
                     <p class="semantic-sample">Plusieurs développeurs peuvent travailler ensemble sur une même branche
                         <i>Mantis_845</i>.
                         Il n'y a pas d'exclusivité à un seul développeur.</p>
@@ -888,7 +889,8 @@ node_modules/
                         <li class="semantic-sample">Pousse à la relecture de code</li>
                         <li class="semantic-sample">Modularise les développements</li>
                         <li class="semantic-sample">Réactivité possible</li>
-                        <li class="semantic-sample">Versionning naturel : dans la branche <b>dev</b>, ce n'est qu'une
+                        <li class="semantic-sample">Versionning naturel : dans la branche <i>master</i>, ce n'est
+                            qu'une
                             succession de fonctionnalités terminées.</li>
                     </ol>
                 </section>
@@ -898,7 +900,7 @@ node_modules/
                         <li class="semantic-sample">Plus compliqué à suivre</li>
                         <li class="semantic-sample">Demande de la <i>rigueur</i></li>
                         <li class="semantic-sample"><b>Risque fort</b> de problème de conflits (si les développeurs ne
-                            mettent pas à jour leur branche <i>Mantis_845</i> avec <i>dev</i></li>
+                            mettent pas à jour leur branche <i>Mantis_845</i> avec <i>master</i></li>
                         <li class="semantic-sample">Certaines fonctionnalités <b>ne se prêtent pas au découplage sur
                                 plusieurs branches car elles partagent du code</b></li>
                         <li class="semantic-sample">Historique du code plus compliqué à remonter</li>
